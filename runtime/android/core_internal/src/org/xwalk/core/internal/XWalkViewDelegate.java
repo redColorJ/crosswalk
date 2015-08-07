@@ -157,7 +157,6 @@ class XWalkViewDelegate {
         }
 
         ResourceExtractor.setMandatoryPaksToExtract(MANDATORY_PAKS);
-        ResourceExtractor.setExtractImplicitLocaleForTesting(false);
 
         setupResourceInterceptor(context);
 
