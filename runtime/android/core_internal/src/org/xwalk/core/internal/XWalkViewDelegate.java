@@ -130,7 +130,7 @@ class XWalkViewDelegate {
         // with System.loadLibrary("xwalkcore") above, but same library won't be loaded repeatedly.
         try {
             LibraryLoader libraryLoader = LibraryLoader.get(LibraryProcessType.PROCESS_BROWSER);
-            libraryLoader.loadNow(context, true);
+            libraryLoader.loadNow(context);
         } catch (ProcessInitException e) {
         }
 
@@ -174,7 +174,7 @@ class XWalkViewDelegate {
             @Override
             public void run() {
                 try {
-                    LibraryLoader.get(LibraryProcessType.PROCESS_BROWSER).ensureInitialized();
+                    LibraryLoader.get(LibraryProcessType.PROCESS_BROWSER).ensureInitialized(context);
                 } catch (ProcessInitException e) {
                     throw new RuntimeException("Cannot initialize Crosswalk Core", e);
                 }
